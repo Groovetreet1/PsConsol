@@ -2,6 +2,9 @@
 
 A modern, dependency-free landing page concept for a next-gen PS5 console showcase.
 
+**🌐 Live demo:** https://groovetreet1.github.io/PsConsol/
+**📦 Repository:** https://github.com/Groovetreet1/PsConsol
+
 ![Status](https://img.shields.io/badge/status-live%20concept-43e7ff)
 ![HTML](https://img.shields.io/badge/HTML5-single%20page-2f7bff)
 ![No build](https://img.shields.io/badge/build-none-8a5cff)
