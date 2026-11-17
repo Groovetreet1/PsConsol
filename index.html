@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS5Consol — Play Beyond Limits</title>
+  <meta name="description" content="PS5Consol is a concept showcase of the next generation of play: lightning-fast SSD, ray tracing, 3D audio and the DualSense controller." />
+  <meta name="theme-color" content="#05060a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2343e7ff'/%3E%3Cstop offset='1' stop-color='%238a5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 2 30 9v14L16 30 2 23V9z' fill='url(%23g)'/%3E%3Cpath d='M13 10l9 6-9 6z' fill='%2305060a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="PS5Consol home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#43e7ff" />
+              <stop offset="1" stop-color="#8a5cff" />
+            </linearGradient>
+          </defs>
+          <path d="M16 2 30 9v14L16 30 2 23V9z" fill="url(#logoGrad)" />
+          <path d="M13 10l9 6-9 6z" fill="#05060a" />
+        </svg>
+        <span class="brand-text">PS5<span>Consol</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#console">Console</a>
+        <a href="#features">Features</a>
+        <a href="#games">Games</a>
+        <a href="#specs">Specs</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="#reserve">Reserve yours</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-lines"></div>
+        <div class="noise"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="status-dot"></span> Next-gen is here</p>
+          <h1 class="reveal" style="--d:.06s">Play <span class="grad-text">beyond</span><br />limits.</h1>
+          <p class="lead reveal" style="--d:.12s">
+            Lightning-fast loading, haptic immersion and breath-taking worlds.
+            PS5Consol is your gateway to the next generation of play.
+          </p>
+          <div class="hero-actions reveal" style="--d:.18s">
+            <a class="btn btn-primary" href="#console">
+              Explore the console
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#games">
+              <span class="play-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              See the games
+            </a>
+          </div>
+
+          <dl class="hero-stats reveal" style="--d:.24s">
+            <div>
+              <dt>Ultra-fast SSD</dt>
+              <dd><span class="count" data-count="5.5" data-decimals="1">0</span><small>GB/s</small></dd>
+            </div>
+            <div>
+              <dt>Up to 4K / 120Hz</dt>
+              <dd><span class="count" data-count="120">0</span><small>fps</small></dd>
+            </div>
+            <div>
+              <dt>RDNA 2 GPU</dt>
+              <dd><span class="count" data-count="10.28" data-decimals="2">0</span><small>TFLOPs</small></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-art reveal" style="--d:.15s">
+          <div class="console-stage" id="consoleStage" aria-hidden="true">
+            <div class="stage-glow"></div>
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+
+            <div class="console-wrap" id="consoleWrap">
+              <div class="console">
+                <div class="plate plate-left"></div>
+                <div class="core">
+                  <div class="disc-slot"></div>
+                  <div class="led"></div>
+                  <div class="usb"></div>
+                  <div class="power"></div>
+                </div>
+                <div class="plate plate-right"></div>
+                <div class="stand"></div>
+              </div>
+              <div class="console-shadow"></div>
+            </div>
+
+            <div class="float-chip chip-1">
+              <span class="chip-dot"></span>
+              <div><strong>Ray tracing</strong><small>Real-time reflections</small></div>
+            </div>
+            <div class="float-chip chip-2">
+              <span class="chip-dot cyan"></span>
+              <div><strong>Tempest 3D</strong><small>Audio engine</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true"><span></span>Scroll</div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>4K Graphics</span><i>◆</i><span>120 FPS</span><i>◆</i><span>Ray Tracing</span><i>◆</i><span>3D Audio</span><i>◆</i><span>Haptic Feedback</span><i>◆</i><span>Ultra-fast SSD</span><i>◆</i>
+        <span>4K Graphics</span><i>◆</i><span>120 FPS</span><i>◆</i><span>Ray Tracing</span><i>◆</i><span>3D Audio</span><i>◆</i><span>Haptic Feedback</span><i>◆</i><span>Ultra-fast SSD</span><i>◆</i>
+      </div>
+    </div>
+
+    <!-- ================= CONSOLE SHOWCASE ================= -->
+    <section class="section console-section" id="console">
+      <div class="container split">
+        <div class="split-copy">
+          <p class="eyebrow reveal">The console</p>
+          <h2 class="reveal" style="--d:.05s">Sculpted to <span class="grad-text">perform</span>.</h2>
+          <p class="reveal" style="--d:.1s">
+            A bold, futuristic silhouette that hides serious engineering. Every curve was designed
+            around airflow, silence and speed — so you can focus on the game, not the machine.
+          </p>
+
+          <ul class="check-list reveal" style="--d:.15s">
+            <li><span class="check">✓</span> Whisper-quiet cooling with a massive 120&nbsp;mm fan</li>
+            <li><span class="check">✓</span> Vertical or horizontal — built to fit your setup</li>
+            <li><span class="check">✓</span> Ultra-fast 825&nbsp;GB custom SSD</li>
+            <li><span class="check">✓</span> 4K Blu-ray disc drive option</li>
+          </ul>
+
+          <div class="mini-specs reveal" style="--d:.2s">
+            <div><span>01</span><p>Custom AMD Zen&nbsp;2 CPU</p></div>
+            <div><span>02</span><p>10.28 TFLOPs RDNA&nbsp;2 GPU</p></div>
+            <div><span>03</span><p>16&nbsp;GB GDDR6 memory</p></div>
+          </div>
+        </div>
+
+        <div class="split-visual reveal" style="--d:.1s" aria-hidden="true">
+          <div class="panel-frame">
+            <div class="frame-inner">
+              <div class="frame-console">
+                <div class="fc-plate left"></div>
+                <div class="fc-core"></div>
+                <div class="fc-plate right"></div>
+              </div>
+              <div class="frame-caption">
+                <span>PS5CONSOL</span>
+                <span class="frame-pill">Next-gen hardware</span>
+              </div>
+            </div>
+            <div class="frame-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="section features-section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Built different</p>
+            <h2 class="reveal" style="--d:.05s">Power you can <span class="grad-text">feel</span>.</h2>
+          </div>
+          <p class="section-sub reveal" style="--d:.1s">
+            Four pillars that change how games look, sound and feel — from the first frame
+            to the last haptic pulse.
+          </p>
+        </div>
+
+        <div class="bento">
+          <article class="card card-wide reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Ultra-high speed SSD</h3>
+            <p>Near-instant loading and seamless worlds. Jump into a game in seconds, not minutes.</p>
+            <div class="speed-meter" aria-hidden="true">
+              <div class="speed-track"><div class="speed-fill"></div></div>
+              <div class="speed-labels"><span>0</span><span class="speed-value">5.5 GB/s</span><span>6.5</span></div>
+            </div>
+          </article>
+
+          <article class="card reveal" style="--d:.06s">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11v4M6 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16.5" cy="11.5" r="1" fill="currentColor"/><circle cx="18.5" cy="13.5" r="1" fill="currentColor"/></svg>
+            </div>
+            <h3>DualSense haptics</h3>
+            <p>Feel tension in a bowstring, the crunch of gravel, the rain on your skin.</p>
+            <div class="haptic-rings" aria-hidden="true"><i></i><i></i><i></i><span class="haptic-core"></span></div>
+          </article>
+
+          <article class="card reveal" style="--d:.12s">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Ray tracing</h3>
+            <p>Real-time reflections and true-to-life shadows, rendered frame by frame.</p>
+            <div class="rays" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </article>
+
+          <article class="card card-wide reveal" style="--d:.18s">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Tempest 3D audio</h3>
+            <p>Hear where every sound comes from. A full 360° soundscape built for headphones.</p>
+            <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTROLLER / IMMERSION ================= -->
+    <section class="section immersion-section" id="immersion">
+      <div class="container split reverse">
+        <div class="split-visual reveal" aria-hidden="true">
+          <div class="controller-scene">
+            <div class="controller-glow"></div>
+            <svg class="controller-svg" viewBox="0 0 600 400" aria-hidden="true">
+              <defs>
+                <linearGradient id="ctrlBody" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffffff" />
+                  <stop offset="0.45" stop-color="#eef2fa" />
+                  <stop offset="0.8" stop-color="#c2cce0" />
+                  <stop offset="1" stop-color="#93a1bb" />
+                </linearGradient>
+                <linearGradient id="ctrlDark" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1a1e29" />
+                  <stop offset="1" stop-color="#080a10" />
+                </linearGradient>
+                <linearGradient id="ctrlLed" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#43e7ff" />
+                  <stop offset="0.5" stop-color="#7af3ff" />
+                  <stop offset="1" stop-color="#2f7bff" />
+                </linearGradient>
+                <radialGradient id="stickGrad" cx="0.35" cy="0.3" r="0.8">
+                  <stop offset="0" stop-color="#3a4152" />
+                  <stop offset="0.6" stop-color="#12151d" />
+                  <stop offset="1" stop-color="#05060a" />
+                </radialGradient>
+                <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="bodyShadow" x="-20%" y="-20%" width="140%" height="160%">
+                  <feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#000000" flood-opacity="0.55" />
+                </filter>
+              </defs>
+
+              <g filter="url(#bodyShadow)">
+                <path
+                  d="M300 62 C372 62 448 88 498 126 C548 164 572 214 565 262 C558 308 530 342 499 338 C470 334 452 298 431 277 C411 257 380 248 300 248 C220 248 189 257 169 277 C148 298 130 334 101 338 C70 342 42 308 35 262 C28 214 52 164 102 126 C152 88 228 62 300 62 Z"
+                  fill="url(#ctrlBody)"
+                  stroke="#ffffff"
+                  stroke-opacity="0.55"
+                  stroke-width="1.5"
+                />
+              </g>
+
+              <path d="M236 105 C268 92 332 92 364 105" fill="none" stroke="url(#ctrlLed)" stroke-width="4" stroke-linecap="round" filter="url(#softGlow)" />
+
+              <rect x="228" y="112" width="144" height="82" rx="19" fill="url(#ctrlDark)" stroke="#ffffff" stroke-opacity="0.16" />
+              <rect x="236" y="119" width="128" height="68" rx="14" fill="none" stroke="#000000" stroke-opacity="0.35" />
+
+              <circle cx="198" cy="240" r="36" fill="#cdd6e6" stroke="#ffffff" stroke-opacity="0.5" />
+              <circle cx="198" cy="240" r="27" fill="url(#stickGrad)" stroke="#000000" stroke-opacity="0.4" />
+              <ellipse cx="188" cy="229" rx="9" ry="5" fill="#ffffff" opacity="0.18" transform="rotate(-25 188 229)" />
+
+              <circle cx="402" cy="240" r="36" fill="#cdd6e6" stroke="#ffffff" stroke-opacity="0.5" />
+              <circle cx="402" cy="240" r="27" fill="url(#stickGrad)" stroke="#000000" stroke-opacity="0.4" />
+              <ellipse cx="392" cy="229" rx="9" ry="5" fill="#ffffff" opacity="0.18" transform="rotate(-25 392 229)" />
+
+              <g fill="#232a38" stroke="#000000" stroke-opacity="0.35">
+                <rect x="132" y="158" width="13" height="58" rx="5" />
+                <rect x="109.5" y="180.5" width="58" height="13" rx="5" />
+              </g>
+              <circle cx="138.5" cy="187" r="4" fill="#151a24" />
+
+              <g fill="url(#ctrlDark)" stroke="#000000" stroke-opacity="0.4">
+                <circle cx="462" cy="166" r="10" />
+                <circle cx="483" cy="187" r="10" />
+                <circle cx="462" cy="208" r="10" />
+                <circle cx="441" cy="187" r="10" />
+              </g>
+              <g fill="none" stroke="#8f9bb2" stroke-width="1.2" opacity="0.9">
+                <path d="M462 162l3.5 6h-7z" />
+                <circle cx="483" cy="187" r="3.2" />
+                <path d="M459.5 205l5 5M464.5 205l-5 5" />
+                <rect x="438.5" y="184.5" width="5" height="5" />
+              </g>
+
+              <rect x="252" y="205" width="16" height="5" rx="2.5" fill="#aab4c8" opacity="0.9" />
+              <rect x="332" y="205" width="16" height="5" rx="2.5" fill="#aab4c8" opacity="0.9" />
+
+              <circle cx="300" cy="220" r="8" fill="none" stroke="#aab4c8" stroke-width="1.4" />
+              <path d="M300 215.5l4 4.5-4 4.5-4-4.5z" fill="none" stroke="#aab4c8" stroke-width="1" />
+            </svg>
+            <div class="ctrl-shadow"></div>
+          </div>
+        </div>
+
+        <div class="split-copy">
+          <p class="eyebrow reveal">Immersion</p>
+          <h2 class="reveal" style="--d:.05s">Feel every <span class="grad-text">moment</span>.</h2>
+          <p class="reveal" style="--d:.1s">
+            The DualSense wireless controller goes far beyond rumble. Adaptive triggers push back,
+            haptic feedback speaks in textures, and a built-in mic keeps you in the squad.
+          </p>
+          <ul class="check-list reveal" style="--d:.15s">
+            <li><span class="check">✓</span> Adaptive triggers with dynamic resistance</li>
+            <li><span class="check">✓</span> Haptic feedback for in-game textures</li>
+            <li><span class="check">✓</span> Built-in microphone and speaker</li>
+            <li><span class="check">✓</span> Create button to share your best clips</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GAMES ================= -->
+    <section class="section games-section" id="games">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">The library</p>
+            <h2 class="reveal" style="--d:.05s">Worlds worth <span class="grad-text">getting lost</span> in.</h2>
+          </div>
+          <div class="games-nav reveal" style="--d:.1s">
+            <button class="circle-btn" id="gamesPrev" aria-label="Previous games">
+              <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="circle-btn" id="gamesNext" aria-label="Next games">
+              <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="games-track-wrap reveal" style="--d:.08s">
+        <div class="games-track" id="gamesTrack">
+          <article class="game-card">
+            <div class="game-art art-1">
+              <span class="game-tag">Action&nbsp;·&nbsp;Adventure</span>
+              <span class="game-badge">PS5 Exclusive</span>
+              <span class="game-glyph">R</span>
+            </div>
+            <div class="game-meta">
+              <h3>Ragnarök Rising</h3>
+              <p>Norse realms, brutal combat and a story carved in myth.</p>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-art art-2">
+              <span class="game-tag">Open&nbsp;World</span>
+              <span class="game-badge">PS5 Exclusive</span>
+              <span class="game-glyph">H</span>
+            </div>
+            <div class="game-meta">
+              <h3>Horizon: New Dawn</h3>
+              <p>Hunt colossal machines across a living, breathing frontier.</p>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-art art-3">
+              <span class="game-tag">Racing&nbsp;·&nbsp;Sim</span>
+              <span class="game-badge">4K / 120</span>
+              <span class="game-glyph">G</span>
+            </div>
+            <div class="game-meta">
+              <h3>Gran Velocity 7</h3>
+              <p>Photoreal circuits, real physics and the roar of the engine.</p>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-art art-4">
+              <span class="game-tag">Sci-Fi&nbsp;·&nbsp;Shooter</span>
+              <span class="game-badge">PS5 Exclusive</span>
+              <span class="game-glyph">R</span>
+            </div>
+            <div class="game-meta">
+              <h3>Rift Protocol</h3>
+              <p>Blast through dimensional rifts with a living arsenal.</p>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-art art-5">
+              <span class="game-tag">Fighting</span>
+              <span class="game-badge">Haptic&nbsp;Ready</span>
+              <span class="game-glyph">S</span>
+            </div>
+            <div class="game-meta">
+              <h3>Shadow Clash</h3>
+              <p>Master the roster. Every hit lands with weight and feedback.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SPECS ================= -->
+    <section class="section specs-section" id="specs">
+      <div class="container split">
+        <div class="split-copy">
+          <p class="eyebrow reveal">Tech specs</p>
+          <h2 class="reveal" style="--d:.05s">Under the <span class="grad-text">shell</span>.</h2>
+          <p class="reveal" style="--d:.1s">
+            A custom architecture built from the ground up for this generation. Every component
+            was chosen to remove friction between you and the game.
+          </p>
+          <a class="btn btn-ghost reveal" style="--d:.15s" href="#reserve">
+            Download full spec sheet
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="spec-table reveal" style="--d:.1s">
+          <div class="spec-row"><span>CPU</span><strong>8x Zen 2 cores @ 3.5 GHz</strong></div>
+          <div class="spec-row"><span>GPU</span><strong>10.28 TFLOPs, RDNA 2, 36 CUs</strong></div>
+          <div class="spec-row"><span>Memory</span><strong>16 GB GDDR6 / 448 GB/s</strong></div>
+          <div class="spec-row"><span>Storage</span><strong>825 GB custom NVMe SSD</strong></div>
+          <div class="spec-row"><span>Throughput</span><strong>5.5 GB/s (raw) · 8–9 GB/s (compressed)</strong></div>
+          <div class="spec-row"><span>Video</span><strong>4K @ 120 Hz · 8K output</strong></div>
+          <div class="spec-row"><span>Audio</span><strong>Tempest 3D AudioTech engine</strong></div>
+          <div class="spec-row"><span>Disc drive</span><strong>4K UHD Blu-ray (optional)</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA / RESERVE ================= -->
+    <section class="section cta-section" id="reserve">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
+          <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
+          <div class="cta-content">
+            <p class="eyebrow">Get ready</p>
+            <h2>Your next adventure starts <span class="grad-text">now</span>.</h2>
+            <p>Join the list and be the first to know about launches, drops and exclusive bundles.</p>
+
+            <form class="cta-form" id="ctaForm" novalidate>
+              <label class="sr-only" for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+              <button class="btn btn-primary" type="submit">Notify me</button>
+            </form>
+            <p class="form-note">No spam. Unsubscribe anytime.</p>
+          </div>
+          <div class="cta-badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path id="circlePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
+              </defs>
+              <text>
+                <textPath href="#circlePath">PS5CONSOL · PLAY BEYOND LIMITS · PS5CONSOL · PLAY BEYOND LIMITS ·</textPath>
+              </text>
+              <path d="M60 42l16 9v18l-16 9-16-9V51z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M56 52l10 8-10 8z" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="PS5Consol home">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 2 30 9v14L16 30 2 23V9z" fill="url(#logoGrad)" />
+            <path d="M13 10l9 6-9 6z" fill="#05060a" />
+          </svg>
+          <span class="brand-text">PS5<span>Consol</span></span>
+        </a>
+        <p>A concept showcase of next-gen play. Built with love for the craft.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#console">Console</a>
+        <a href="#features">Features</a>
+        <a href="#games">Games</a>
+        <a href="#specs">Specs</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#reserve">Reserve</a>
+        <a href="#reserve">Newsletter</a>
+        <a href="#top">Warranty</a>
+        <a href="#top">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="#top">X / Twitter</a>
+        <a href="#top">Instagram</a>
+        <a href="#top">YouTube</a>
+        <a href="#top">Discord</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> PS5Consol. Fan-made concept, not affiliated with Sony Interactive Entertainment.</p>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
