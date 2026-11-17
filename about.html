@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — PS5Consol</title>
+  <meta name="description" content="The story behind PS5Consol: a fan-made concept built for the love of play." />
+  <meta name="theme-color" content="#05060a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2343e7ff'/%3E%3Cstop offset='1' stop-color='%238a5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 2 30 9v14L16 30 2 23V9z' fill='url(%23g)'/%3E%3Cpath d='M13 10l9 6-9 6z' fill='%2305060a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body id="top" data-page="about">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="PS5Consol home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#43e7ff" />
+              <stop offset="1" stop-color="#8a5cff" />
+            </linearGradient>
+          </defs>
+          <path d="M16 2 30 9v14L16 30 2 23V9z" fill="url(#logoGrad)" />
+          <path d="M13 10l9 6-9 6z" fill="#05060a" />
+        </svg>
+        <span class="brand-text">PS5<span>Consol</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html#console" data-i18n="nav.console">Console</a>
+        <a href="index.html#games" data-i18n="nav.games">Games</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="store.html" data-i18n="nav.store">Store</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="store.html" data-i18n="nav.reserve">Reserve yours</a>
+      </nav>
+
+      <div class="nav-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="nav.lang">
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="fr">FR</button>
+          <button class="lang-btn" type="button" data-lang="ar">ع</button>
+        </div>
+        <a class="cart-btn" href="store.html" aria-label="Cart" data-i18n-aria="nav.cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.2 12H7.2L6 8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-lines"></div>
+        <div class="noise"></div>
+      </div>
+      <div class="container page-hero-inner">
+        <p class="eyebrow reveal"><span class="status-dot"></span> <span data-i18n="about.hero.eyebrow">Our story</span></p>
+        <h1 class="reveal" style="--d:.05s" data-i18n-html="about.hero.title">Built for the love of <span class="grad-text">play</span>.</h1>
+        <p class="lead reveal" style="--d:.1s" data-i18n="about.hero.lead">
+          PS5Consol is a fan-made concept born from late nights, big screens and the feeling that games can take us somewhere else entirely.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="split-copy">
+          <p class="eyebrow reveal" data-i18n="about.story.eyebrow">How it started</p>
+          <h2 class="reveal" style="--d:.05s" data-i18n-html="about.story.title">From a sketch to a <span class="grad-text">universe</span>.</h2>
+          <p class="reveal" style="--d:.1s" data-i18n="about.story.p1">
+            It began with a single sketch: a console that looked like it belonged in a sci-fi film, paired with a controller that could make you feel the rain.
+          </p>
+          <p class="reveal" style="--d:.14s" data-i18n="about.story.p2">
+            Today PS5Consol is a small design studio of players, illustrators and engineers. We build the feeling of pressing start for the first time.
+          </p>
+        </div>
+
+        <div class="split-visual reveal" style="--d:.1s">
+          <div class="about-visual">
+            <img class="about-shot" src="assets/img/products/console.svg" alt="" loading="lazy" />
+            <div class="about-visual-caption">
+              <span>PS5CONSOL</span>
+              <span class="frame-pill" data-i18n="home.console.caption">Next-gen hardware</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats-section">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-card reveal">
+            <strong><span class="count" data-count="3">0</span></strong>
+            <span data-i18n="about.story.stat1">Years of dreaming</span>
+          </div>
+          <div class="stat-card reveal" style="--d:.06s">
+            <strong><span class="count" data-count="120">0</span>+</strong>
+            <span data-i18n="about.story.stat2">Worlds explored</span>
+          </div>
+          <div class="stat-card reveal" style="--d:.12s">
+            <strong><span class="count" data-count="48">0</span>K</strong>
+            <span data-i18n="about.story.stat3">Players in the community</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal" data-i18n="about.values.eyebrow">Our values</p>
+            <h2 class="reveal" style="--d:.05s" data-i18n-html="about.values.title">What we <span class="grad-text">believe</span>.</h2>
+          </div>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card reveal">
+            <span class="value-num">01</span>
+            <h3 data-i18n="about.values.v1Title">Craft first</h3>
+            <p data-i18n="about.values.v1Desc">Every pixel, every transition and every word is deliberate. Details are the difference.</p>
+          </article>
+          <article class="value-card reveal" style="--d:.06s">
+            <span class="value-num">02</span>
+            <h3 data-i18n="about.values.v2Title">Community</h3>
+            <p data-i18n="about.values.v2Desc">The best worlds are shared. We build with players, not just for them.</p>
+          </article>
+          <article class="value-card reveal" style="--d:.12s">
+            <span class="value-num">03</span>
+            <h3 data-i18n="about.values.v3Title">No limits</h3>
+            <p data-i18n="about.values.v3Desc">If it feels impossible, it is probably the right direction. We keep pushing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section timeline-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal" data-i18n="about.timeline.eyebrow">The journey</p>
+            <h2 class="reveal" style="--d:.05s" data-i18n-html="about.timeline.title">A few <span class="grad-text">milestones</span>.</h2>
+          </div>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <span class="time-year">2022</span>
+            <h3 data-i18n="about.timeline.y1Title">The idea</h3>
+            <p data-i18n="about.timeline.y1Desc">A late-night sketch of a console that feels like the future.</p>
+          </li>
+          <li class="timeline-item reveal" style="--d:.06s">
+            <span class="time-year">2023</span>
+            <h3 data-i18n="about.timeline.y2Title">First concept</h3>
+            <p data-i18n="about.timeline.y2Desc">The first full render, the first controller and the first fans.</p>
+          </li>
+          <li class="timeline-item reveal" style="--d:.12s">
+            <span class="time-year">2024</span>
+            <h3 data-i18n="about.timeline.y3Title">Community</h3>
+            <p data-i18n="about.timeline.y3Desc">A small Discord became a global crew of players and makers.</p>
+          </li>
+          <li class="timeline-item reveal" style="--d:.18s">
+            <span class="time-year">2026</span>
+            <h3 data-i18n="about.timeline.y4Title">Store launch</h3>
+            <p data-i18n="about.timeline.y4Desc">The concept became a place to gear up and play.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
+          <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
+          <div class="cta-content about-cta">
+            <h2 data-i18n-html="about.cta.title">Ready to <span class="grad-text">gear up</span>?</h2>
+            <p data-i18n="about.cta.lead">Explore the collection and bring the next generation home.</p>
+            <a class="btn btn-primary" href="store.html">
+              <span data-i18n="about.cta.button">Visit the store</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="PS5Consol home">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 2 30 9v14L16 30 2 23V9z" fill="url(#logoGrad)" />
+            <path d="M13 10l9 6-9 6z" fill="#05060a" />
+          </svg>
+          <span class="brand-text">PS5<span>Consol</span></span>
+        </a>
+        <p data-i18n="footer.tagline">A concept showcase of next-gen play. Built with love for the craft.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.explore">Explore</h4>
+        <a href="index.html#console" data-i18n="nav.console">Console</a>
+        <a href="index.html#games" data-i18n="nav.games">Games</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="store.html" data-i18n="nav.store">Store</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.support">Support</h4>
+        <a href="index.html#reserve" data-i18n="footer.reserve">Reserve</a>
+        <a href="index.html#reserve" data-i18n="footer.newsletter">Newsletter</a>
+        <a href="store.html" data-i18n="footer.warranty">Warranty</a>
+        <a href="about.html" data-i18n="footer.contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.follow">Follow</h4>
+        <a href="#" rel="noopener">X / Twitter</a>
+        <a href="#" rel="noopener">Instagram</a>
+        <a href="#" rel="noopener">YouTube</a>
+        <a href="#" rel="noopener">Discord</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> PS5Consol. <span data-i18n="footer.disclaimer">Fan-made concept, not affiliated with Sony Interactive Entertainment.</span></p>
+      <a class="to-top" href="#top" data-i18n="footer.backToTop">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

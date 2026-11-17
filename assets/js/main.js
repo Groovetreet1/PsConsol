@@ -5,6 +5,13 @@
   "use strict";
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const t = (key, fallback) => {
+    if (window.I18N) {
+      const value = window.I18N.t(key);
+      if (value && value !== key) return value;
+    }
+    return fallback;
+  };
 
   /* ---------- Element refs ---------- */
   const nav = document.getElementById("nav");
@@ -31,8 +38,8 @@
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const ratio = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
 
-    nav.classList.toggle("scrolled", scrollTop > 12);
-    progress.style.width = `${ratio * 100}%`;
+    if (nav) nav.classList.toggle("scrolled", scrollTop > 12);
+    if (progress) progress.style.width = `${ratio * 100}%`;
     ticking = false;
   };
 
@@ -49,31 +56,40 @@
   onScroll();
 
   /* ---------- Mobile menu ---------- */
+  const menuLabel = (open) => t(open ? "nav.close" : "nav.menu", open ? "Close menu" : "Open menu");
+
   const closeMenu = () => {
+    if (!navLinks || !navToggle) return;
     navLinks.classList.remove("open");
     navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Open menu");
+    navToggle.setAttribute("aria-label", menuLabel(false));
     document.body.classList.remove("menu-open");
   };
 
-  navToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-    document.body.classList.toggle("menu-open", isOpen);
-  });
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", menuLabel(isOpen));
+      document.body.classList.toggle("menu-open", isOpen);
+    });
 
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) closeMenu();
-  });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+
+    document.addEventListener("i18n:changed", () => {
+      navToggle.setAttribute("aria-label", menuLabel(navLinks.classList.contains("open")));
+    });
+  }
 
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll(".reveal");
@@ -135,10 +151,10 @@
   /* ---------- Hero console 3D tilt ---------- */
   if (stage && !prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
     const MAX = 9;
-    stage.addEventListener("mousemove", (e) => {
+    stage.addEventListener("mousemove", (event) => {
       const rect = stage.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width - 0.5;
-      const py = (e.clientY - rect.top) / rect.height - 0.5;
+      const px = (event.clientX - rect.left) / rect.width - 0.5;
+      const py = (event.clientY - rect.top) / rect.height - 0.5;
       stage.style.setProperty("--ry", `${(px * MAX * 2).toFixed(2)}deg`);
       stage.style.setProperty("--rx", `${(-py * MAX * 2).toFixed(2)}deg`);
     });
@@ -165,9 +181,9 @@
 
     window.addEventListener(
       "pointermove",
-      (e) => {
-        gx = e.clientX;
-        gy = e.clientY;
+      (event) => {
+        gx = event.clientX;
+        gy = event.clientY;
         if (!raf) raf = window.requestAnimationFrame(loop);
       },
       { passive: true }
@@ -182,7 +198,7 @@
   }
 
   /* ---------- Games carousel ---------- */
-  if (gamesTrack) {
+  if (gamesTrack && gamesPrev && gamesNext) {
     const step = () => {
       const card = gamesTrack.querySelector(".game-card");
       return card ? card.getBoundingClientRect().width + 22 : 340;
@@ -200,31 +216,35 @@
     updateButtons();
   }
 
-  /* ---------- Newsletter form ---------- */
+  /* ---------- Toast ---------- */
   let toastTimer = null;
   const showToast = (message) => {
+    if (!toast || !message) return;
     toast.textContent = message;
     toast.classList.add("show");
     window.clearTimeout(toastTimer);
     toastTimer = window.setTimeout(() => toast.classList.remove("show"), 3800);
   };
 
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+  window.PS5UI = { toast: showToast };
+
+  /* ---------- Newsletter form ---------- */
+  if (form && email) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
       const value = email.value.trim();
       const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
 
       if (!isValid) {
         email.classList.add("invalid");
         email.focus();
-        showToast("Please enter a valid email address.");
+        showToast(t("home.toast.invalid", "Please enter a valid email address."));
         return;
       }
 
       email.classList.remove("invalid");
       form.reset();
-      showToast("You're on the list — see you on the other side. 🎮");
+      showToast(t("home.toast.success", "You're on the list — see you on the other side. 🎮"));
     });
 
     email.addEventListener("input", () => email.classList.remove("invalid"));

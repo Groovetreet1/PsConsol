@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#120616"/>
+      <stop offset=".5" stop-color="#250b28"/>
+      <stop offset="1" stop-color="#06030a"/>
+    </linearGradient>
+    <radialGradient id="moon">
+      <stop offset="0" stop-color="#fff3f8"/>
+      <stop offset=".4" stop-color="#ffc9e0" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#ff9dc7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a0f24"/>
+      <stop offset="1" stop-color="#08030a"/>
+    </linearGradient>
+    <linearGradient id="col" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a1836"/>
+      <stop offset="1" stop-color="#120614"/>
+    </linearGradient>
+    <linearGradient id="fighterA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0d8e6"/>
+      <stop offset="1" stop-color="#4a2038"/>
+    </linearGradient>
+    <linearGradient id="fighterB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cbb8e8"/>
+      <stop offset="1" stop-color="#2a1638"/>
+    </linearGradient>
+    <radialGradient id="spark">
+      <stop offset="0" stop-color="#ffe2a8"/>
+      <stop offset="1" stop-color="#ff7a4d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#06030a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06030a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="750" fill="url(#sky)"/>
+  <circle cx="300" cy="230" r="190" fill="url(#moon)" opacity=".55"/>
+  <circle cx="300" cy="230" r="74" fill="#ffe6f1" opacity=".9"/>
+
+  <g fill="url(#col)">
+    <rect x="30" y="300" width="46" height="300" rx="6"/>
+    <rect x="92" y="330" width="34" height="270" rx="5"/>
+    <rect x="524" y="300" width="46" height="300" rx="6"/>
+    <rect x="474" y="330" width="34" height="270" rx="5"/>
+    <rect x="30" y="288" width="46" height="18" rx="4"/>
+    <rect x="92" y="320" width="34" height="14" rx="4"/>
+    <rect x="524" y="288" width="46" height="18" rx="4"/>
+    <rect x="474" y="320" width="34" height="14" rx="4"/>
+  </g>
+
+  <path d="M0 600 L600 600 L600 750 L0 750Z" fill="url(#floor)"/>
+  <ellipse cx="300" cy="646" rx="210" ry="34" fill="#000" opacity=".5"/>
+
+  <g transform="translate(238 560)">
+    <path d="M-8 0 l-40 84 h22 l16 -50 l8 50 h22 l-6 -84z" fill="url(#fighterA)"/>
+    <path d="M-10 -62 C-22 -50 -22 -30 -8 -18 L10 -18 C24 -34 22 -52 10 -62Z" fill="url(#fighterA)"/>
+    <circle cx="0" cy="-76" r="14" fill="#f0d8e6"/>
+    <path d="M-12 -20 l-52 -18 8 -16 48 12z" fill="url(#fighterA)"/>
+    <path d="M14 -22 l44 -44 12 12 -40 48z" fill="url(#fighterA)"/>
+    <path d="M52 -60 l54 -28 6 14 -50 30z" fill="#2a1630"/>
+    <path d="M104 -92 l40 -12 4 12 -38 16z" fill="#e6d4ea"/>
+  </g>
+
+  <g transform="translate(382 590)">
+    <path d="M-6 0 l-44 70 h20 l20 -44 l10 44 h22 l-4 -70z" fill="url(#fighterB)"/>
+    <path d="M-8 -58 C-20 -46 -20 -26 -6 -14 L12 -14 C26 -30 24 -48 12 -58Z" fill="url(#fighterB)"/>
+    <circle cx="2" cy="-72" r="13" fill="#cbb8e8"/>
+    <path d="M-12 -18 l-46 6 2 -16 44 -6z" fill="url(#fighterB)"/>
+    <path d="M12 -20 l40 -34 12 12 -36 40z" fill="url(#fighterB)"/>
+    <path d="M48 -50 l50 -18 6 14 -46 24z" fill="#2a1638"/>
+    <path d="M98 -72 l40 -6 2 12 -38 12z" fill="#d9c8ee"/>
+  </g>
+
+  <g fill="url(#spark)">
+    <circle cx="320" cy="492" r="22"/>
+    <circle cx="348" cy="522" r="16"/>
+    <circle cx="296" cy="536" r="14"/>
+  </g>
+  <g fill="#ffe2a8">
+    <circle cx="320" cy="492" r="4"/>
+    <circle cx="348" cy="522" r="3"/>
+    <circle cx="296" cy="536" r="2.6"/>
+  </g>
+  <g stroke="#ffb08a" stroke-width="1.5" opacity=".7">
+    <path d="M300 500 l-18 -14"/>
+    <path d="M330 508 l14 -18"/>
+    <path d="M310 528 l-12 14"/>
+  </g>
+
+  <rect y="540" width="600" height="210" fill="url(#fade)"/>
+</svg>

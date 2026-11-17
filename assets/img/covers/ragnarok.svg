@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#071019"/>
+      <stop offset=".45" stop-color="#0c2330"/>
+      <stop offset="1" stop-color="#04070c"/>
+    </linearGradient>
+    <radialGradient id="moon">
+      <stop offset="0" stop-color="#f2fcff"/>
+      <stop offset=".4" stop-color="#bdefff"/>
+      <stop offset="1" stop-color="#bdefff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="aur" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#43e7ff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#2f7bff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mt1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e4556"/>
+      <stop offset="1" stop-color="#071118"/>
+    </linearGradient>
+    <linearGradient id="mt2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d2029"/>
+      <stop offset="1" stop-color="#04080c"/>
+    </linearGradient>
+    <radialGradient id="ember">
+      <stop offset="0" stop-color="#ffc07a"/>
+      <stop offset="1" stop-color="#ff6a3d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04070c" stop-opacity="0"/>
+      <stop offset="1" stop-color="#04070c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="750" fill="url(#sky)"/>
+  <circle cx="428" cy="178" r="150" fill="url(#moon)" opacity=".9"/>
+  <circle cx="428" cy="178" r="54" fill="#e8fbff" opacity=".92"/>
+  <path d="M-60 330 C110 190 250 300 370 220 C480 150 560 210 660 140 L660 420 L-60 420Z" fill="url(#aur)" opacity=".45"/>
+  <path d="M-40 360 C110 280 230 440 350 350 C470 260 540 440 660 360" fill="none" stroke="#9fe3ef" stroke-opacity=".16" stroke-width="30"/>
+  <path d="M-40 388 C120 320 250 460 370 380 C500 296 560 440 660 390" fill="none" stroke="#cdeef7" stroke-opacity=".08" stroke-width="10"/>
+
+  <g fill="url(#mt1)">
+    <path d="M0 470 L120 360 L220 440 L330 330 L430 430 L520 380 L600 450 L600 750 L0 750Z"/>
+  </g>
+  <g fill="url(#mt2)">
+    <path d="M0 560 L90 470 L180 530 L270 450 L380 540 L470 480 L600 570 L600 750 L0 750Z"/>
+  </g>
+  <path d="M0 620 L600 590 L600 750 L0 750Z" fill="#03060a"/>
+
+  <g fill="#020409">
+    <ellipse cx="300" cy="712" rx="120" ry="16" opacity=".65"/>
+    <path d="M282 545 h38 l18 84 -16 79 h-18 l-7 -60 -8 60 h-18 l-16 -79z"/>
+    <circle cx="301" cy="522" r="19"/>
+    <path d="M283 550 l-44 44 12 15 40 -34z"/>
+    <path d="M320 552 l52 26 -7 17 -55 -22z"/>
+    <path d="M350 534 l10 108 -12 3 -16 -96z" fill="#10151d"/>
+    <path d="M352 540 l48 12 -8 30 -46 -14z" fill="#232e3d"/>
+  </g>
+
+  <g fill="url(#ember)">
+    <circle cx="380" cy="470" r="14"/>
+    <circle cx="430" cy="520" r="9"/>
+    <circle cx="200" cy="500" r="8"/>
+    <circle cx="150" cy="560" r="12"/>
+    <circle cx="480" cy="590" r="7"/>
+  </g>
+  <g fill="#ffb36b" opacity=".8">
+    <circle cx="382" cy="468" r="2.6"/>
+    <circle cx="431" cy="519" r="1.8"/>
+    <circle cx="201" cy="499" r="1.6"/>
+    <circle cx="151" cy="559" r="2.2"/>
+    <circle cx="481" cy="589" r="1.5"/>
+  </g>
+
+  <rect y="520" width="600" height="230" fill="url(#fade)"/>
+</svg>

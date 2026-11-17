@@ -9,11 +9,11 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2343e7ff'/%3E%3Cstop offset='1' stop-color='%238a5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 2 30 9v14L16 30 2 23V9z' fill='url(%23g)'/%3E%3Cpath d='M13 10l9 6-9 6z' fill='%2305060a'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<body id="top" data-page="home">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
 
   <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
   <!-- ================= NAV ================= -->
   <header class="nav" id="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="PS5Consol home">
+      <a class="brand" href="index.html" aria-label="PS5Consol home">
         <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
           <defs>
             <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
@@ -36,22 +36,34 @@
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#console">Console</a>
-        <a href="#features">Features</a>
-        <a href="#games">Games</a>
-        <a href="#specs">Specs</a>
-        <a class="btn btn-primary btn-sm nav-cta" href="#reserve">Reserve yours</a>
+        <a href="index.html#console" data-i18n="nav.console">Console</a>
+        <a href="index.html#games" data-i18n="nav.games">Games</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="store.html" data-i18n="nav.store">Store</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="store.html" data-i18n="nav.reserve">Reserve yours</a>
       </nav>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span>
-      </button>
+      <div class="nav-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="nav.lang">
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="fr">FR</button>
+          <button class="lang-btn" type="button" data-lang="ar">ع</button>
+        </div>
+        <a class="cart-btn" href="store.html" aria-label="Cart" data-i18n-aria="nav.cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.2 12H7.2L6 8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
     <!-- ================= HERO ================= -->
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="hero-bg" aria-hidden="true">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
@@ -61,36 +73,36 @@
 
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow reveal"><span class="status-dot"></span> Next-gen is here</p>
-          <h1 class="reveal" style="--d:.06s">Play <span class="grad-text">beyond</span><br />limits.</h1>
-          <p class="lead reveal" style="--d:.12s">
+          <p class="eyebrow reveal"><span class="status-dot"></span> <span data-i18n="home.hero.eyebrow">Next-gen is here</span></p>
+          <h1 class="reveal" style="--d:.06s" data-i18n-html="home.hero.title">Play <span class="grad-text">beyond</span><br />limits.</h1>
+          <p class="lead reveal" style="--d:.12s" data-i18n="home.hero.lead">
             Lightning-fast loading, haptic immersion and breath-taking worlds.
             PS5Consol is your gateway to the next generation of play.
           </p>
           <div class="hero-actions reveal" style="--d:.18s">
             <a class="btn btn-primary" href="#console">
-              Explore the console
+              <span data-i18n="home.hero.cta1">Explore the console</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             <a class="btn btn-ghost" href="#games">
               <span class="play-ico" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
               </span>
-              See the games
+              <span data-i18n="home.hero.cta2">See the games</span>
             </a>
           </div>
 
           <dl class="hero-stats reveal" style="--d:.24s">
             <div>
-              <dt>Ultra-fast SSD</dt>
+              <dt data-i18n="home.hero.stat1">Ultra-fast SSD</dt>
               <dd><span class="count" data-count="5.5" data-decimals="1">0</span><small>GB/s</small></dd>
             </div>
             <div>
-              <dt>Up to 4K / 120Hz</dt>
+              <dt data-i18n="home.hero.stat2">Up to 4K / 120Hz</dt>
               <dd><span class="count" data-count="120">0</span><small>fps</small></dd>
             </div>
             <div>
-              <dt>RDNA 2 GPU</dt>
+              <dt data-i18n="home.hero.stat3">RDNA 2 GPU</dt>
               <dd><span class="count" data-count="10.28" data-decimals="2">0</span><small>TFLOPs</small></dd>
             </div>
           </dl>
@@ -120,24 +132,24 @@
 
             <div class="float-chip chip-1">
               <span class="chip-dot"></span>
-              <div><strong>Ray tracing</strong><small>Real-time reflections</small></div>
+              <div><strong data-i18n="home.hero.chip1Title">Ray tracing</strong><small data-i18n="home.hero.chip1Sub">Real-time reflections</small></div>
             </div>
             <div class="float-chip chip-2">
               <span class="chip-dot cyan"></span>
-              <div><strong>Tempest 3D</strong><small>Audio engine</small></div>
+              <div><strong data-i18n="home.hero.chip2Title">Tempest 3D</strong><small data-i18n="home.hero.chip2Sub">Audio engine</small></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="scroll-hint" aria-hidden="true"><span></span>Scroll</div>
+      <div class="scroll-hint" aria-hidden="true"><span class="mouse"></span><span data-i18n="home.hero.scroll">Scroll</span></div>
     </section>
 
     <!-- ================= MARQUEE ================= -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>4K Graphics</span><i>◆</i><span>120 FPS</span><i>◆</i><span>Ray Tracing</span><i>◆</i><span>3D Audio</span><i>◆</i><span>Haptic Feedback</span><i>◆</i><span>Ultra-fast SSD</span><i>◆</i>
-        <span>4K Graphics</span><i>◆</i><span>120 FPS</span><i>◆</i><span>Ray Tracing</span><i>◆</i><span>3D Audio</span><i>◆</i><span>Haptic Feedback</span><i>◆</i><span>Ultra-fast SSD</span><i>◆</i>
+        <span data-i18n="home.marquee.m0">4K Graphics</span><i>◆</i><span data-i18n="home.marquee.m1">120 FPS</span><i>◆</i><span data-i18n="home.marquee.m2">Ray Tracing</span><i>◆</i><span data-i18n="home.marquee.m3">3D Audio</span><i>◆</i><span data-i18n="home.marquee.m4">Haptic Feedback</span><i>◆</i><span data-i18n="home.marquee.m5">Ultra-fast SSD</span><i>◆</i>
+        <span data-i18n="home.marquee.m0">4K Graphics</span><i>◆</i><span data-i18n="home.marquee.m1">120 FPS</span><i>◆</i><span data-i18n="home.marquee.m2">Ray Tracing</span><i>◆</i><span data-i18n="home.marquee.m3">3D Audio</span><i>◆</i><span data-i18n="home.marquee.m4">Haptic Feedback</span><i>◆</i><span data-i18n="home.marquee.m5">Ultra-fast SSD</span><i>◆</i>
       </div>
     </div>
 
@@ -145,24 +157,24 @@
     <section class="section console-section" id="console">
       <div class="container split">
         <div class="split-copy">
-          <p class="eyebrow reveal">The console</p>
-          <h2 class="reveal" style="--d:.05s">Sculpted to <span class="grad-text">perform</span>.</h2>
-          <p class="reveal" style="--d:.1s">
+          <p class="eyebrow reveal" data-i18n="home.console.eyebrow">The console</p>
+          <h2 class="reveal" style="--d:.05s" data-i18n-html="home.console.title">Sculpted to <span class="grad-text">perform</span>.</h2>
+          <p class="reveal" style="--d:.1s" data-i18n="home.console.lead">
             A bold, futuristic silhouette that hides serious engineering. Every curve was designed
             around airflow, silence and speed — so you can focus on the game, not the machine.
           </p>
 
           <ul class="check-list reveal" style="--d:.15s">
-            <li><span class="check">✓</span> Whisper-quiet cooling with a massive 120&nbsp;mm fan</li>
-            <li><span class="check">✓</span> Vertical or horizontal — built to fit your setup</li>
-            <li><span class="check">✓</span> Ultra-fast 825&nbsp;GB custom SSD</li>
-            <li><span class="check">✓</span> 4K Blu-ray disc drive option</li>
+            <li><span class="check">✓</span> <span data-i18n="home.console.check1">Whisper-quiet cooling with a massive 120&nbsp;mm fan</span></li>
+            <li><span class="check">✓</span> <span data-i18n="home.console.check2">Vertical or horizontal — built to fit your setup</span></li>
+            <li><span class="check">✓</span> <span data-i18n="home.console.check3">Ultra-fast 825&nbsp;GB custom SSD</span></li>
+            <li><span class="check">✓</span> <span data-i18n="home.console.check4">4K Blu-ray disc drive option</span></li>
           </ul>
 
           <div class="mini-specs reveal" style="--d:.2s">
-            <div><span>01</span><p>Custom AMD Zen&nbsp;2 CPU</p></div>
-            <div><span>02</span><p>10.28 TFLOPs RDNA&nbsp;2 GPU</p></div>
-            <div><span>03</span><p>16&nbsp;GB GDDR6 memory</p></div>
+            <div><span>01</span><p data-i18n="home.console.mini1">Custom AMD Zen&nbsp;2 CPU</p></div>
+            <div><span>02</span><p data-i18n="home.console.mini2">10.28 TFLOPs RDNA&nbsp;2 GPU</p></div>
+            <div><span>03</span><p data-i18n="home.console.mini3">16&nbsp;GB GDDR6 memory</p></div>
           </div>
         </div>
 
@@ -176,7 +188,7 @@
               </div>
               <div class="frame-caption">
                 <span>PS5CONSOL</span>
-                <span class="frame-pill">Next-gen hardware</span>
+                <span class="frame-pill" data-i18n="home.console.caption">Next-gen hardware</span>
               </div>
             </div>
             <div class="frame-line"></div>
@@ -190,10 +202,10 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow reveal">Built different</p>
-            <h2 class="reveal" style="--d:.05s">Power you can <span class="grad-text">feel</span>.</h2>
+            <p class="eyebrow reveal" data-i18n="home.features.eyebrow">Built different</p>
+            <h2 class="reveal" style="--d:.05s" data-i18n-html="home.features.title">Power you can <span class="grad-text">feel</span>.</h2>
           </div>
-          <p class="section-sub reveal" style="--d:.1s">
+          <p class="section-sub reveal" style="--d:.1s" data-i18n="home.features.sub">
             Four pillars that change how games look, sound and feel — from the first frame
             to the last haptic pulse.
           </p>
@@ -204,8 +216,8 @@
             <div class="card-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Ultra-high speed SSD</h3>
-            <p>Near-instant loading and seamless worlds. Jump into a game in seconds, not minutes.</p>
+            <h3 data-i18n="home.features.ssdTitle">Ultra-high speed SSD</h3>
+            <p data-i18n="home.features.ssdDesc">Near-instant loading and seamless worlds. Jump into a game in seconds, not minutes.</p>
             <div class="speed-meter" aria-hidden="true">
               <div class="speed-track"><div class="speed-fill"></div></div>
               <div class="speed-labels"><span>0</span><span class="speed-value">5.5 GB/s</span><span>6.5</span></div>
@@ -216,8 +228,8 @@
             <div class="card-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11v4M6 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16.5" cy="11.5" r="1" fill="currentColor"/><circle cx="18.5" cy="13.5" r="1" fill="currentColor"/></svg>
             </div>
-            <h3>DualSense haptics</h3>
-            <p>Feel tension in a bowstring, the crunch of gravel, the rain on your skin.</p>
+            <h3 data-i18n="home.features.hapticsTitle">DualSense haptics</h3>
+            <p data-i18n="home.features.hapticsDesc">Feel tension in a bowstring, the crunch of gravel, the rain on your skin.</p>
             <div class="haptic-rings" aria-hidden="true"><i></i><i></i><i></i><span class="haptic-core"></span></div>
           </article>
 
@@ -225,8 +237,8 @@
             <div class="card-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </div>
-            <h3>Ray tracing</h3>
-            <p>Real-time reflections and true-to-life shadows, rendered frame by frame.</p>
+            <h3 data-i18n="home.features.rayTitle">Ray tracing</h3>
+            <p data-i18n="home.features.rayDesc">Real-time reflections and true-to-life shadows, rendered frame by frame.</p>
             <div class="rays" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
           </article>
 
@@ -234,8 +246,8 @@
             <div class="card-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </div>
-            <h3>Tempest 3D audio</h3>
-            <p>Hear where every sound comes from. A full 360° soundscape built for headphones.</p>
+            <h3 data-i18n="home.features.audioTitle">Tempest 3D audio</h3>
+            <p data-i18n="home.features.audioDesc">Hear where every sound comes from. A full 360° soundscape built for headphones.</p>
             <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           </article>
         </div>
@@ -335,17 +347,17 @@
         </div>
 
         <div class="split-copy">
-          <p class="eyebrow reveal">Immersion</p>
-          <h2 class="reveal" style="--d:.05s">Feel every <span class="grad-text">moment</span>.</h2>
-          <p class="reveal" style="--d:.1s">
+          <p class="eyebrow reveal" data-i18n="home.immersion.eyebrow">Immersion</p>
+          <h2 class="reveal" style="--d:.05s" data-i18n-html="home.immersion.title">Feel every <span class="grad-text">moment</span>.</h2>
+          <p class="reveal" style="--d:.1s" data-i18n="home.immersion.lead">
             The DualSense wireless controller goes far beyond rumble. Adaptive triggers push back,
             haptic feedback speaks in textures, and a built-in mic keeps you in the squad.
           </p>
           <ul class="check-list reveal" style="--d:.15s">
-            <li><span class="check">✓</span> Adaptive triggers with dynamic resistance</li>
-            <li><span class="check">✓</span> Haptic feedback for in-game textures</li>
-            <li><span class="check">✓</span> Built-in microphone and speaker</li>
-            <li><span class="check">✓</span> Create button to share your best clips</li>
+            <li><span class="check">✓</span> <span data-i18n="home.immersion.check1">Adaptive triggers with dynamic resistance</span></li>
+            <li><span class="check">✓</span> <span data-i18n="home.immersion.check2">Haptic feedback for in-game textures</span></li>
+            <li><span class="check">✓</span> <span data-i18n="home.immersion.check3">Built-in microphone and speaker</span></li>
+            <li><span class="check">✓</span> <span data-i18n="home.immersion.check4">Create button to share your best clips</span></li>
           </ul>
         </div>
       </div>
@@ -356,8 +368,8 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow reveal">The library</p>
-            <h2 class="reveal" style="--d:.05s">Worlds worth <span class="grad-text">getting lost</span> in.</h2>
+            <p class="eyebrow reveal" data-i18n="home.games.eyebrow">The library</p>
+            <h2 class="reveal" style="--d:.05s" data-i18n-html="home.games.title">Worlds worth <span class="grad-text">getting lost</span> in.</h2>
           </div>
           <div class="games-nav reveal" style="--d:.1s">
             <button class="circle-btn" id="gamesPrev" aria-label="Previous games">
@@ -374,61 +386,61 @@
         <div class="games-track" id="gamesTrack">
           <article class="game-card">
             <div class="game-art art-1">
-              <span class="game-tag">Action&nbsp;·&nbsp;Adventure</span>
-              <span class="game-badge">PS5 Exclusive</span>
-              <span class="game-glyph">R</span>
+              <img class="game-cover" src="assets/img/covers/ragnarok.svg" alt="" loading="lazy" />
+              <span class="game-tag" data-i18n="home.games.t1">Action&nbsp;·&nbsp;Adventure</span>
+              <span class="game-badge" data-i18n="home.games.b1">PS5 Exclusive</span>
             </div>
             <div class="game-meta">
               <h3>Ragnarök Rising</h3>
-              <p>Norse realms, brutal combat and a story carved in myth.</p>
+              <p data-i18n="home.games.g1">Norse realms, brutal combat and a story carved in myth.</p>
             </div>
           </article>
 
           <article class="game-card">
             <div class="game-art art-2">
-              <span class="game-tag">Open&nbsp;World</span>
-              <span class="game-badge">PS5 Exclusive</span>
-              <span class="game-glyph">H</span>
+              <img class="game-cover" src="assets/img/covers/horizon.svg" alt="" loading="lazy" />
+              <span class="game-tag" data-i18n="home.games.t2">Open&nbsp;World</span>
+              <span class="game-badge" data-i18n="home.games.b2">PS5 Exclusive</span>
             </div>
             <div class="game-meta">
               <h3>Horizon: New Dawn</h3>
-              <p>Hunt colossal machines across a living, breathing frontier.</p>
+              <p data-i18n="home.games.g2">Hunt colossal machines across a living, breathing frontier.</p>
             </div>
           </article>
 
           <article class="game-card">
             <div class="game-art art-3">
-              <span class="game-tag">Racing&nbsp;·&nbsp;Sim</span>
-              <span class="game-badge">4K / 120</span>
-              <span class="game-glyph">G</span>
+              <img class="game-cover" src="assets/img/covers/velocity.svg" alt="" loading="lazy" />
+              <span class="game-tag" data-i18n="home.games.t3">Racing&nbsp;·&nbsp;Sim</span>
+              <span class="game-badge" data-i18n="home.games.b3">4K / 120</span>
             </div>
             <div class="game-meta">
               <h3>Gran Velocity 7</h3>
-              <p>Photoreal circuits, real physics and the roar of the engine.</p>
+              <p data-i18n="home.games.g3">Photoreal circuits, real physics and the roar of the engine.</p>
             </div>
           </article>
 
           <article class="game-card">
             <div class="game-art art-4">
-              <span class="game-tag">Sci-Fi&nbsp;·&nbsp;Shooter</span>
-              <span class="game-badge">PS5 Exclusive</span>
-              <span class="game-glyph">R</span>
+              <img class="game-cover" src="assets/img/covers/rift.svg" alt="" loading="lazy" />
+              <span class="game-tag" data-i18n="home.games.t4">Sci-Fi&nbsp;·&nbsp;Shooter</span>
+              <span class="game-badge" data-i18n="home.games.b4">PS5 Exclusive</span>
             </div>
             <div class="game-meta">
               <h3>Rift Protocol</h3>
-              <p>Blast through dimensional rifts with a living arsenal.</p>
+              <p data-i18n="home.games.g4">Blast through dimensional rifts with a living arsenal.</p>
             </div>
           </article>
 
           <article class="game-card">
             <div class="game-art art-5">
-              <span class="game-tag">Fighting</span>
-              <span class="game-badge">Haptic&nbsp;Ready</span>
-              <span class="game-glyph">S</span>
+              <img class="game-cover" src="assets/img/covers/shadow.svg" alt="" loading="lazy" />
+              <span class="game-tag" data-i18n="home.games.t5">Fighting</span>
+              <span class="game-badge" data-i18n="home.games.b5">Haptic&nbsp;Ready</span>
             </div>
             <div class="game-meta">
               <h3>Shadow Clash</h3>
-              <p>Master the roster. Every hit lands with weight and feedback.</p>
+              <p data-i18n="home.games.g5">Master the roster. Every hit lands with weight and feedback.</p>
             </div>
           </article>
         </div>
@@ -439,27 +451,27 @@
     <section class="section specs-section" id="specs">
       <div class="container split">
         <div class="split-copy">
-          <p class="eyebrow reveal">Tech specs</p>
-          <h2 class="reveal" style="--d:.05s">Under the <span class="grad-text">shell</span>.</h2>
-          <p class="reveal" style="--d:.1s">
+          <p class="eyebrow reveal" data-i18n="home.specs.eyebrow">Tech specs</p>
+          <h2 class="reveal" style="--d:.05s" data-i18n-html="home.specs.title">Under the <span class="grad-text">shell</span>.</h2>
+          <p class="reveal" style="--d:.1s" data-i18n="home.specs.lead">
             A custom architecture built from the ground up for this generation. Every component
             was chosen to remove friction between you and the game.
           </p>
           <a class="btn btn-ghost reveal" style="--d:.15s" href="#reserve">
-            Download full spec sheet
+            <span data-i18n="home.specs.cta">Download full spec sheet</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
         <div class="spec-table reveal" style="--d:.1s">
-          <div class="spec-row"><span>CPU</span><strong>8x Zen 2 cores @ 3.5 GHz</strong></div>
-          <div class="spec-row"><span>GPU</span><strong>10.28 TFLOPs, RDNA 2, 36 CUs</strong></div>
-          <div class="spec-row"><span>Memory</span><strong>16 GB GDDR6 / 448 GB/s</strong></div>
-          <div class="spec-row"><span>Storage</span><strong>825 GB custom NVMe SSD</strong></div>
-          <div class="spec-row"><span>Throughput</span><strong>5.5 GB/s (raw) · 8–9 GB/s (compressed)</strong></div>
-          <div class="spec-row"><span>Video</span><strong>4K @ 120 Hz · 8K output</strong></div>
-          <div class="spec-row"><span>Audio</span><strong>Tempest 3D AudioTech engine</strong></div>
-          <div class="spec-row"><span>Disc drive</span><strong>4K UHD Blu-ray (optional)</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r1">CPU</span><strong>8x Zen 2 cores @ 3.5 GHz</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r2">GPU</span><strong>10.28 TFLOPs, RDNA 2, 36 CUs</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r3">Memory</span><strong>16 GB GDDR6 / 448 GB/s</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r4">Storage</span><strong>825 GB custom NVMe SSD</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r5">Throughput</span><strong>5.5 GB/s (raw) · 8–9 GB/s (compressed)</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r6">Video</span><strong>4K @ 120 Hz · 8K output</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r7">Audio</span><strong>Tempest 3D AudioTech engine</strong></div>
+          <div class="spec-row"><span data-i18n="home.specs.r8">Disc drive</span><strong>4K UHD Blu-ray (optional)</strong></div>
         </div>
       </div>
     </section>
@@ -471,16 +483,16 @@
           <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
           <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
           <div class="cta-content">
-            <p class="eyebrow">Get ready</p>
-            <h2>Your next adventure starts <span class="grad-text">now</span>.</h2>
-            <p>Join the list and be the first to know about launches, drops and exclusive bundles.</p>
+            <p class="eyebrow" data-i18n="home.cta.eyebrow">Get ready</p>
+            <h2 data-i18n-html="home.cta.title">Your next adventure starts <span class="grad-text">now</span>.</h2>
+            <p data-i18n="home.cta.lead">Join the list and be the first to know about launches, drops and exclusive bundles.</p>
 
             <form class="cta-form" id="ctaForm" novalidate>
-              <label class="sr-only" for="email">Email address</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-              <button class="btn btn-primary" type="submit">Notify me</button>
+              <label class="sr-only" for="email" data-i18n="common.email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" data-i18n-placeholder="home.cta.placeholder" autocomplete="email" required />
+              <button class="btn btn-primary" type="submit" data-i18n="home.cta.button">Notify me</button>
             </form>
-            <p class="form-note">No spam. Unsubscribe anytime.</p>
+            <p class="form-note" data-i18n="home.cta.note">No spam. Unsubscribe anytime.</p>
           </div>
           <div class="cta-badge" aria-hidden="true">
             <svg viewBox="0 0 120 120">
@@ -503,49 +515,52 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="PS5Consol home">
+        <a class="brand" href="index.html" aria-label="PS5Consol home">
           <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
             <path d="M16 2 30 9v14L16 30 2 23V9z" fill="url(#logoGrad)" />
             <path d="M13 10l9 6-9 6z" fill="#05060a" />
           </svg>
           <span class="brand-text">PS5<span>Consol</span></span>
         </a>
-        <p>A concept showcase of next-gen play. Built with love for the craft.</p>
+        <p data-i18n="footer.tagline">A concept showcase of next-gen play. Built with love for the craft.</p>
       </div>
 
       <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="#console">Console</a>
-        <a href="#features">Features</a>
-        <a href="#games">Games</a>
-        <a href="#specs">Specs</a>
+        <h4 data-i18n="footer.explore">Explore</h4>
+        <a href="index.html#console" data-i18n="nav.console">Console</a>
+        <a href="index.html#games" data-i18n="nav.games">Games</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="store.html" data-i18n="nav.store">Store</a>
       </div>
 
       <div class="footer-col">
-        <h4>Support</h4>
-        <a href="#reserve">Reserve</a>
-        <a href="#reserve">Newsletter</a>
-        <a href="#top">Warranty</a>
-        <a href="#top">Contact</a>
+        <h4 data-i18n="footer.support">Support</h4>
+        <a href="index.html#reserve" data-i18n="footer.reserve">Reserve</a>
+        <a href="index.html#reserve" data-i18n="footer.newsletter">Newsletter</a>
+        <a href="store.html" data-i18n="footer.warranty">Warranty</a>
+        <a href="about.html" data-i18n="footer.contact">Contact</a>
       </div>
 
       <div class="footer-col">
-        <h4>Follow</h4>
-        <a href="#top">X / Twitter</a>
-        <a href="#top">Instagram</a>
-        <a href="#top">YouTube</a>
-        <a href="#top">Discord</a>
+        <h4 data-i18n="footer.follow">Follow</h4>
+        <a href="#" rel="noopener">X / Twitter</a>
+        <a href="#" rel="noopener">Instagram</a>
+        <a href="#" rel="noopener">YouTube</a>
+        <a href="#" rel="noopener">Discord</a>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <p>© <span id="year">2026</span> PS5Consol. Fan-made concept, not affiliated with Sony Interactive Entertainment.</p>
-      <a class="to-top" href="#top">Back to top ↑</a>
+      <p>© <span id="year">2026</span> PS5Consol. <span data-i18n="footer.disclaimer">Fan-made concept, not affiliated with Sony Interactive Entertainment.</span></p>
+      <a class="to-top" href="#top" data-i18n="footer.backToTop">Back to top ↑</a>
     </div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
