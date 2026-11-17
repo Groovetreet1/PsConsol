@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — PS5Consol</title>
+  <meta name="description" content="Sign in to your PS5Consol profile with a 3D console-style concept login." />
+  <meta name="theme-color" content="#05060a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2343e7ff'/%3E%3Cstop offset='1' stop-color='%238a5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 2 30 9v14L16 30 2 23V9z' fill='url(%23g)'/%3E%3Cpath d='M13 10l9 6-9 6z' fill='%2305060a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body id="top" data-page="login">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="PS5Consol home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#43e7ff" />
+              <stop offset="1" stop-color="#8a5cff" />
+            </linearGradient>
+          </defs>
+          <path d="M16 2 30 9v14L16 30 2 23V9z" fill="url(#logoGrad)" />
+          <path d="M13 10l9 6-9 6z" fill="#05060a" />
+        </svg>
+        <span class="brand-text">PS5<span>Consol</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html#console" data-i18n="nav.console">Console</a>
+        <a href="index.html#games" data-i18n="nav.games">Games</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="store.html" data-i18n="nav.store">Store</a>
+        <a href="login.html" aria-current="page" data-i18n="nav.login">Sign in</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="store.html" data-i18n="nav.reserve">Reserve yours</a>
+      </nav>
+
+      <div class="nav-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="nav.lang">
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="fr">FR</button>
+          <button class="lang-btn" type="button" data-lang="ar">ع</button>
+        </div>
+        <a class="cart-btn" href="store.html" aria-label="Cart" data-i18n-aria="nav.cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.2 12H7.2L6 8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="login-main">
+    <section class="login-section" id="loginSection">
+      <div class="page-hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-lines"></div>
+        <div class="noise"></div>
+      </div>
+
+      <div class="container login-shell">
+        <div class="login-intro reveal">
+          <p class="eyebrow"><span class="status-dot"></span> <span data-i18n="login.hero.eyebrow">Welcome back</span></p>
+          <h1 data-i18n-html="login.hero.title">Sign in to <span class="grad-text">PS5Consol</span>.</h1>
+          <p class="lead" data-i18n="login.hero.lead">
+            Your worlds, your saves and your squad — one profile, every session.
+          </p>
+
+          <div class="login-stage" id="loginStage" aria-hidden="true">
+            <div class="stage-glow login-glow"></div>
+            <div class="ring login-ring-1"></div>
+            <div class="ring login-ring-2"></div>
+
+            <div class="login-osbar">
+              <span class="os-led"></span>
+              <span class="os-name" data-i18n="login.scene.os">PS5CONSOL OS</span>
+              <span class="os-sep"></span>
+              <span class="os-status" data-i18n="login.scene.status">Ready to play</span>
+              <span class="login-clock" id="loginClock">--:--</span>
+            </div>
+
+            <div class="login-console-deck" id="loginDeck">
+              <div class="console login-console">
+                <div class="plate plate-left"></div>
+                <div class="core">
+                  <div class="disc-slot"></div>
+                  <div class="led"></div>
+                  <div class="usb"></div>
+                  <div class="power"></div>
+                </div>
+                <div class="plate plate-right"></div>
+                <div class="stand"></div>
+              </div>
+              <div class="console-shadow"></div>
+            </div>
+
+            <div class="login-pad-wrap" id="loginPad">
+              <img class="login-pad" src="assets/img/products/controller.svg" alt="" width="600" height="600" />
+            </div>
+
+            <div class="login-chip login-chip-1">
+              <span class="chip-dot"></span>
+              <div><strong data-i18n="login.scene.chip1Title">Ultra-fast SSD</strong><small data-i18n="login.scene.chip1Sub">Instant worlds</small></div>
+            </div>
+            <div class="login-chip login-chip-2">
+              <span class="chip-dot cyan"></span>
+              <div><strong data-i18n="login.scene.chip2Title">Tempest 3D</strong><small data-i18n="login.scene.chip2Sub">Audio engine</small></div>
+            </div>
+
+            <div class="login-player-card">
+              <span class="login-avatar">P1</span>
+              <div class="login-player-copy">
+                <strong data-i18n="login.player">Player One</strong>
+                <small data-i18n="login.playerSub">Local profile</small>
+              </div>
+              <span class="login-online"><i></i> <span data-i18n="login.online">Online</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-panel reveal" style="--d:.1s">
+          <div class="login-card-wrap">
+            <div class="login-card-glow" aria-hidden="true"></div>
+
+            <div class="login-card" id="loginCard">
+              <div class="login-card-inner">
+                <div class="login-card-head">
+                  <span class="login-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32"><path d="M16 2 30 9v14L16 30 2 23V9z" fill="currentColor"/><path d="M13 10l9 6-9 6z" fill="#05060a"/></svg>
+                  </span>
+                  <p class="eyebrow"><span class="status-dot"></span> <span data-i18n="login.hero.eyebrow">Welcome back</span></p>
+                </div>
+
+                <h2 class="login-card-title" data-i18n="nav.login">Sign in</h2>
+
+                <form class="login-form" id="loginForm" novalidate>
+                  <div class="login-field">
+                    <label for="loginEmail" data-i18n="login.form.email">Email</label>
+                    <div class="login-input">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      <input id="loginEmail" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="you@example.com" data-i18n-placeholder="login.form.emailPlaceholder" required />
+                    </div>
+                  </div>
+
+                  <div class="login-field">
+                    <label for="loginPassword" data-i18n="login.form.password">Password</label>
+                    <div class="login-input">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                      <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" data-i18n-placeholder="login.form.passwordPlaceholder" required />
+                      <button class="pw-toggle" id="pwToggle" type="button" aria-label="Show password" aria-pressed="false">
+                        <svg class="pw-eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+                        <svg class="pw-eye-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M10.6 6.1A10.6 10.6 0 0 1 12 6c6 0 9.5 6 9.5 6a17.7 17.7 0 0 1-3.1 3.6M6.6 6.7C3.9 8.6 2.5 12 2.5 12s3.5 6 9.5 6a9 9 0 0 0 3.5-.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <p class="login-error" id="loginError" role="alert" hidden></p>
+
+                  <div class="login-row">
+                    <label class="login-check">
+                      <input type="checkbox" id="rememberEmail" />
+                      <span class="login-check-box" aria-hidden="true"></span>
+                      <span data-i18n="login.form.remember">Remember me</span>
+                    </label>
+                    <button class="login-link" id="forgotBtn" type="button" data-i18n="login.form.forgot">Forgot password?</button>
+                  </div>
+
+                  <button class="btn btn-primary login-submit" id="loginSubmit" type="submit">
+                    <span class="login-submit-label" data-i18n="login.form.submit">Sign in</span>
+                    <span class="login-spinner" aria-hidden="true"></span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </form>
+
+                <div class="login-divider"><span data-i18n="login.divider">or</span></div>
+
+                <a class="btn btn-ghost login-guest" href="index.html">
+                  <span data-i18n="login.guest">Continue as guest</span>
+                </a>
+
+                <p class="login-create">
+                  <span data-i18n="login.create">New to PS5Consol?</span>
+                  <a href="index.html#reserve" data-i18n="login.createLink">Join the list</a>
+                </p>
+
+                <p class="login-security">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span data-i18n="login.security">Demo sign-in — no real credentials are stored.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="login-success" id="loginSuccess" hidden>
+              <div class="login-success-ring" aria-hidden="true">
+                <span class="success-core">
+                  <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <p class="eyebrow"><span class="status-dot"></span> <span data-i18n="login.demo.eyebrow">Session ready</span></p>
+              <h2 data-i18n="login.demo.title">You're in.</h2>
+              <p class="login-success-as"><span data-i18n="login.demo.as">Signed in as</span> <strong id="sessionEmail">player@ps5consol.gg</strong></p>
+              <p class="login-success-lead" data-i18n="login.demo.lead">This is a concept login — no account was created.</p>
+              <div class="login-success-actions">
+                <a class="btn btn-primary" href="store.html" data-i18n="login.demo.store">Enter the store</a>
+                <button class="btn btn-ghost" id="signOutBtn" type="button" data-i18n="login.demo.signout">Sign out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="PS5Consol home">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 2 30 9v14L16 30 2 23V9z" fill="url(#logoGrad)" />
+            <path d="M13 10l9 6-9 6z" fill="#05060a" />
+          </svg>
+          <span class="brand-text">PS5<span>Consol</span></span>
+        </a>
+        <p data-i18n="footer.tagline">A concept showcase of next-gen play. Built with love for the craft.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.explore">Explore</h4>
+        <a href="index.html#console" data-i18n="nav.console">Console</a>
+        <a href="index.html#games" data-i18n="nav.games">Games</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="store.html" data-i18n="nav.store">Store</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.support">Support</h4>
+        <a href="login.html" data-i18n="nav.login">Sign in</a>
+        <a href="index.html#reserve" data-i18n="footer.reserve">Reserve</a>
+        <a href="index.html#reserve" data-i18n="footer.newsletter">Newsletter</a>
+        <a href="about.html" data-i18n="footer.contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.follow">Follow</h4>
+        <a href="#" rel="noopener">X / Twitter</a>
+        <a href="#" rel="noopener">Instagram</a>
+        <a href="#" rel="noopener">YouTube</a>
+        <a href="#" rel="noopener">Discord</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> PS5Consol. <span data-i18n="footer.disclaimer">Fan-made concept, not affiliated with Sony Interactive Entertainment.</span></p>
+      <a class="to-top" href="#top" data-i18n="footer.backToTop">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/login.js" defer></script>
+</body>
+</html>

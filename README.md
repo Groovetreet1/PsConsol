@@ -1,6 +1,6 @@
 # PS5Consol
 
-A modern, dependency-free website concept for a next-gen PS5 console showcase — landing page, journal and demo store.
+A modern, dependency-free website concept for a next-gen PS5 console showcase — landing page, journal, demo store and a 3D console-style login.
 
 **🌐 Live demo:** https://groovetreet1.github.io/PsConsol/
 **📦 Repository:** https://github.com/Groovetreet1/PsConsol
@@ -20,6 +20,7 @@ A modern, dependency-free website concept for a next-gen PS5 console showcase �
 - **About page** with story, values, animated stats and a milestone timeline
 - **Journal (blog)** with a featured article, listing and full article pages
 - **Demo store** with category filters, product grid and a slide-out cart (add, quantity, remove, subtotal)
+- **3D console-style login** with a tilting console/controller scene, glass sign-in card, live OS clock, password reveal and a demo session state
 - **Trilingual UI**: English, French and Arabic with full RTL support and a language switcher
 - **Persistent cart** via `localStorage`
 - Fully **responsive** (desktop / tablet / mobile) with a mobile menu
@@ -35,6 +36,7 @@ A modern, dependency-free website concept for a next-gen PS5 console showcase �
 | Journal | `blog.html` | Featured post and article listing |
 | Article | `article.html?post=<slug>` | Article reader with related posts |
 | Store | `store.html` | Product filters, product grid and cart drawer |
+| Sign in | `login.html` | 3D console-style demo login with session state |
 
 The cart badge is shared across all pages. Cart data is stored under the `ps5consol-cart` key.
 
@@ -56,6 +58,15 @@ The store is a front-end demo — **no payments are processed**.
 - Cart logic lives in `assets/js/cart.js` (shared) and `assets/js/store.js` (UI).
 - Maximum quantity per line is 9.
 - Checkout shows a demo-only toast.
+
+## 🔐 Demo login
+
+`login.html` is a front-end concept only — **no credentials are sent or stored**.
+
+- The 3D scene reacts to the pointer on desktop and the glass card has a depth tilt.
+- Email + password validation, password reveal and a demo loading/success state.
+- "Remember me" stores only the email under `ps5consol-demo-email`; the demo session lives in `sessionStorage` (`ps5consol-demo-session`) and ends with the tab.
+- Sign out returns to the form without reloading the page.
 
 ## 🚀 Run locally
 
@@ -80,6 +91,7 @@ Ps5Consol/
 ├── blog.html
 ├── article.html
 ├── store.html
+├── login.html
 ├── assets/
 │   ├── css/
 │   │   └── style.css
@@ -89,6 +101,7 @@ Ps5Consol/
 │   └── js/
 │       ├── i18n.js        # EN / FR / AR dictionary + language switching
 │       ├── main.js        # shared UI: nav, reveal, counters, toasts, carousel
+│       ├── login.js       # 3D login scene, validation and demo session
 │       ├── cart.js        # shared cart state + badge
 │       ├── store-data.js  # product catalogue
 │       ├── store.js       # store filters + cart drawer
